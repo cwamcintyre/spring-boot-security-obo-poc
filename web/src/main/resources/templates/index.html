@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Web App</title>
+</head>
+<body>
+<h1 th:text="${message}"></h1>
+<div th:if="${userName}">
+    <p>Welcome, <span th:text="${userName}"></span> (<span th:text="${userEmail}"></span>)</p>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>
+    <div th:if="${apiGreeting}">
+        <h2>API Greeting</h2>
+        <p th:text="${apiGreeting}"></p>
+    </div>
+    <form th:action="@{/claims}" method="post">
+        <button type="submit">Show My Claims</button>
+    </form>
+    <div th:if="${claims}">
+        <h2>Your Claims</h2>
+        <pre th:text="${claims}"></pre>
+    </div>
+    <form th:action="@{/onlyWriters}" method="post">
+        <button type="submit">Show Writer Endpoint</button>
+    </form>
+    <div th:if="${writerResult}">
+        <h2>Writer Endpoint Result</h2>
+        <pre th:text="${writerResult}"></pre>
+    </div>
+    <form th:action="@{/onlySuperusers}" method="post">
+        <button type="submit">Show Superuser Endpoint</button>
+    </form>
+    <div th:if="${superuserResult}">
+        <h2>Superuser Endpoint Result</h2>
+        <pre th:text="${superuserResult}"></pre>
+    </div>
+    <!-- Optionally, render claims here if you want to show them server-side -->
+</div>
+<div th:if="${userName} == null">
+    <a th:href="@{/oauth2/authorization/azure}">Login with Microsoft Entra</a>
+</div>
+</body>
+</html>
