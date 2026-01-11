@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.security.oauth2.client: DEBUG
+    org.springframework.security.oauth2.client.endpoint: DEBUG
+
+api:
+  base-url: http://localhost:8081
+  msTenantId: 5005d2b4-47f7-4911-befe-93b6815688f5
+  oboApiScope: api://69b590d4-f0ea-4a9a-bd26-37402c16cf85/access_as_user
+  msAuthority: https://login.microsoftonline.com/5005d2b4-47f7-4911-befe-93b6815688f5
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          azure:
+            client-id: <client id>
+            client-secret: <client secret>
+            redirect-uri: "{baseUrl}/login/oauth2/code/"
+            scope: openid, profile, email, offline_access, api://5ecf6615-157d-4b0f-98f7-c53ecc4d1768/obo_grant
+            provider: azure
+        provider:
+          azure:
+            issuer-uri: https://login.microsoftonline.com/5005d2b4-47f7-4911-befe-93b6815688f5/v2.0

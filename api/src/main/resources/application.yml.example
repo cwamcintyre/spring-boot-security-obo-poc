@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://login.microsoftonline.com/5005d2b4-47f7-4911-befe-93b6815688f5/v2.0
+          jwk-set-uri: https://login.microsoftonline.com/5005d2b4-47f7-4911-befe-93b6815688f5/discovery/v2.0/keys
+          audience: 69b590d4-f0ea-4a9a-bd26-37402c16cf85

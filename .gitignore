@@ -1,0 +1,57 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Gradle
+.gradle/
+build/
+!src/**/build/
+!api/build/
+!web/build/
+!common/build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+
+# Sensitive files
+*.key
+*.pem
+*.crt
+*.p12
+*.jks
+
+# Application properties
+*.yml
+*.yaml
+application-*.yml
+application-*.yaml
+
+# Exclude secrets
+*secret*
+
+# Exclude generated sources
+**/generated/
+
+# Exclude wrapper binaries
+/gradle/wrapper/gradle-wrapper.jar
+
+# Exclude backup and stash directories
+**/backup-dir/
+**/stash-dir/
+
